@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ลงทะเบียน - Give & Grow</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        .page {
+
+            width: 100%;
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 120, 170, 0.15),
+                    rgba(0, 80, 130, 0.55)
+                ),
+                url("background.jpg")
+                center center / cover no-repeat;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+
+        .register-box {
+
+            width: 100%;
+            max-width: 550px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-radius: 30px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.35);
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            color: #08779b;
+
+            margin-bottom: 10px;
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            font-size: 18px;
+
+            color: #555;
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            color: #333;
+
+            margin-bottom: 7px;
+        }
+
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            font-size: 16px;
+
+            border: 2px solid #b8dce8;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .form-group input:focus {
+
+            border-color: #0784aa;
+
+            box-shadow:
+                0 0 8px
+                rgba(0, 132, 170, 0.25);
+        }
+
+
+        .register-button {
+
+            width: 100%;
+
+            margin-top: 10px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffb300,
+                    #70d83d
+                );
+
+            color: white;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 15px
+                rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+
+        .register-button:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 20px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        .register-button:active {
+
+            transform: scale(0.97);
+        }
+
+
+        .register-button:disabled {
+
+            opacity: 0.6;
+
+            cursor: wait;
+        }
+
+
+        #message {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+
+        .back-button {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #08779b;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+
+        @media (max-width: 500px) {
+
+            .page {
+                padding: 20px 15px;
+            }
+
+
+            .register-box {
+
+                padding: 25px 20px;
+
+                border-radius: 20px;
+            }
+
+
+            .title {
+                font-size: 32px;
+            }
+
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+        <div class="register-box">
+
+
+            <div class="title">
+                ลงทะเบียน
+            </div>
+
+
+            <div class="subtitle">
+                กรอกข้อมูลเพื่อเข้าร่วมกิจกรรม
+            </div>
+
+
+            <form id="registerForm">
+
+
+                <div class="form-group">
+
+                    <label for="firstname">
+                        ชื่อ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="firstname"
+                        placeholder="กรอกชื่อ"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="lastname">
+                        นามสกุล
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lastname"
+                        placeholder="กรอกนามสกุล"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="nickname">
+                        ชื่อเล่น
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nickname"
+                        placeholder="กรอกชื่อเล่น"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="age">
+                        อายุ
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="กรอกอายุ"
+                        min="1"
+                        max="100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        อีเมล
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        เบอร์โทรศัพท์
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="กรอกเบอร์โทรศัพท์"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="register-button"
+                    id="submitButton"
+                >
+                    ลงทะเบียน
+                </button>
+
+
+            </form>
+
+
+            <div id="message"></div>
+
+
+            <a
+                href="index.html"
+                class="back-button"
+            >
+                ← กลับหน้าหลัก
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        /* URL Google Apps Script */
+
+        const scriptURL =
+            "https://script.google.com/macros/s/AKfycbyFarn5VAD1ecp2YxBxdfZ2SGPY9c6db6_e3Gi7QIisCj-CH61Mkkga2PLjU74rwWsU/exec";
+
+
+        /* ระบบส่งข้อมูล */
+
+        document
+            .getElementById("registerForm")
+            .addEventListener(
+                "submit",
+                async function(event) {
+
+                    event.preventDefault();
+
+
+                    const button =
+                        document.getElementById(
+                            "submitButton"
+                        );
+
+
+                    const message =
+                        document.getElementById(
+                            "message"
+                        );
+
+
+                    button.disabled = true;
+
+                    button.innerText =
+                        "กำลังลงทะเบียน...";
+
+
+                    const data = {
+
+                        firstname:
+                            document.getElementById(
+                                "firstname"
+                            ).value,
+
+                        lastname:
+                            document.getElementById(
+                                "lastname"
+                            ).value,
+
+                        nickname:
+                            document.getElementById(
+                                "nickname"
+                            ).value,
+
+                        age:
+                            document.getElementById(
+                                "age"
+                            ).value,
+
+                        email:
+                            document.getElementById(
+                                "email"
+                            ).value,
+
+                        phone:
+                            document.getElementById(
+                                "phone"
+                            ).value
+
+                    };
+
+
+                    try {
+
+                        await fetch(
+                            scriptURL,
+                            {
+
+                                method: "POST",
+
+                                body:
+                                    JSON.stringify(data)
+
+                            }
+                        );
+
+
+                        message.innerText =
+                            "✅ ลงทะเบียนสำเร็จ!";
+
+                        message.style.color =
+                            "green";
+
+
+                        document
+                            .getElementById(
+                                "registerForm"
+                            )
+                            .reset();
+
+
+                    }
+
+                    catch (error) {
+
+                        console.error(error);
+
+
+                        message.innerText =
+                            "❌ ลงทะเบียนไม่สำเร็จ";
+
+                        message.style.color =
+                            "red";
+
+                    }
+
+
+                    button.disabled = false;
+
+                    button.innerText =
+                        "ลงทะเบียน";
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>
